@@ -280,7 +280,7 @@ Each test case is run five times.
     =
     49.4287%
 
-            # 9. Observation
+# 9. Observation
             Thread-Safe Experiment
             The AtomicLong counter provides safe atomic updates when multiple
             threads increment the same shared counter.
@@ -366,7 +366,8 @@ safe.incrementAndGet();
 
 AtomicLong provides an atomic increment operation, so concurrent
 threads can safely update the shared counter without losing increments.
-## 14. Analysis Questions
+
+## 10. Analysis Questions
      1. What is the difference between static and non-static variables?
        A static variable belongs to the class and has one shared copy.
      A non-static variable belongs to an object, so every object has its own
