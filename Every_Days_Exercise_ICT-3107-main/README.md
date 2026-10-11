@@ -10,21 +10,21 @@
 - `run_all.ps1` – script that runs all test cases (5 unsynchronized runs per thread count)
 - `show_cases.ps1` – prints the output of one test case (used for screenshots)
 
-- Lab_Thread_Counter
-│
-├── Mashrafi_Thread.java
-├── README.md
-├── run_all.ps1
-├── show_cases.ps1
-│
-├── handwritten/
-│
-└── outputs/
-    ├── results.csv
-    ├── T1_true_run1.txt
-    ├── T1_false_run1.txt
-    ├── ...
-    └── T100_false_run5.txt
+            - Lab_Thread_Counter
+            │
+            ├── Mashrafi_Thread.java
+            ├── README.md
+            ├── run_all.ps1
+            ├── show_cases.ps1
+            │
+            ├── handwritten/
+            │
+            └── outputs/
+                ├── results.csv
+                ├── T1_true_run1.txt
+                ├── T1_false_run1.txt
+                ├── ...
+                └── T100_false_run5.txt
 
   # 3. How to Run
    Compile the Java Program
