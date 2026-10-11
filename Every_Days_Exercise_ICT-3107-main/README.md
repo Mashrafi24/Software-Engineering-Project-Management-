@@ -96,11 +96,12 @@ thread scheduling is not deterministic.
 
     ##TC1
 1 thread, 1,000 increments/thread
-Safe:
+
+            Safe:
 <img width="419" height="251" alt="WhatsApp Image 2026-10-11 at 3 13 33 AM" src="https://github.com/user-attachments/assets/b92d08e6-a34d-4b85-8683-a0d6fe9b69cf" />
 
 
-Unsafe:
+            Unsafe:
 <img width="419" height="251" alt="WhatsApp Image 2026-10-11 at 3 13 33 AM" src="https://github.com/user-attachments/assets/b92d08e6-a34d-4b85-8683-a0d6fe9b69cf" />
 
 
@@ -108,46 +109,53 @@ Unsafe:
 
 
 2 threads, 10,000 increments/thread
-Safe:
+
+            Safe:
 <img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/76cea33e-7233-42ed-bb74-ea10f5f750ff" />
 
-Unsafe:
+            Unsafe:
 <img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/76cea33e-7233-42ed-bb74-ea10f5f750ff" />
    
     ##TC3
 
 5 threads, 10,000 increments/thread
-Safe:
+
+            Safe:
 <img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/bf181eee-ef7d-496b-a6ad-d3b7dba619e9" />
 
-Unsafe:
+            Unsafe:
 <img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/bf181eee-ef7d-496b-a6ad-d3b7dba619e9" />
 
     ##TC4
 
 10 threads, 50,000 increments/thread
-Safe:
+
+            Safe:
 <img width="416" height="730" alt="WhatsApp Image 2026-10-11 at 3 14 39 AM" src="https://github.com/user-attachments/assets/4da529d8-dd8a-4d8c-850e-d2c28dc4069b" />
-Unsafe:
+
+            Unsafe:
 <img width="416" height="730" alt="WhatsApp Image 2026-10-11 at 3 14 39 AM" src="https://github.com/user-attachments/assets/4da529d8-dd8a-4d8c-850e-d2c28dc4069b" />
 
     ##TC5
 
 
 20 threads, 50,000 increments/thread
-Safe:
+
+            Safe:
 <img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/a6e9a0b9-e2fe-4f95-a105-a937b20f598d" />
 
 
-Unsafe:
+            Unsafe:
 <img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/a6e9a0b9-e2fe-4f95-a105-a937b20f598d" />
 
     ##TC6
 
 50 threads, 50,000 increments/thread
-Safe:
+
+            Safe:
 <img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/6e6e7699-5531-44b8-bd26-c67cec9aac78" />
 
+            unsafe :
 <img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/6e6e7699-5531-44b8-bd26-c67cec9aac78" />
 
     ##TC7
@@ -155,9 +163,11 @@ Safe:
 
 
 100 threads, 50,000 increments/thread
-Safe:
+
+            Safe:
 <img width="410" height="451" alt="WhatsApp Image 2026-10-11 at 3 15 20 AM" src="https://github.com/user-attachments/assets/272a6e9c-c180-4d4c-b471-47bfb23964ee" />
-Unsafe:
+
+            Unsafe:
 <img width="410" height="451" alt="WhatsApp Image 2026-10-11 at 3 15 20 AM" src="https://github.com/user-attachments/assets/272a6e9c-c180-4d4c-b471-47bfb23964ee" />
 
 # 7. Result Analysis
@@ -368,39 +378,39 @@ AtomicLong provides an atomic increment operation, so concurrent
 threads can safely update the shared counter without losing increments.
 
 ## 10. Analysis Questions
-     1. What is the difference between static and non-static variables?
+## 1. What is the difference between static and non-static variables?
        A static variable belongs to the class and has one shared copy.
      A non-static variable belongs to an object, so every object has its own
      copy.
-    2. Why can the static counter produce an incorrect value?
+## 2. Why can the static counter produce an incorrect value?
     Because the static counter is shared by multiple threads and the normal
     long increment operation is not atomic.
-    3. Why is the non-static counter correct?
+## 3. Why is the non-static counter correct?
     Each thread has its own Counter object and therefore its own
     non-static count variable.
-    4. Why is join() necessary?
+## 4. Why is join() necessary?
     join() ensures that the main thread waits for all worker threads to
     finish before calculating the final result.
-    5. What causes lost updates?
+## 5. What causes lost updates?
     Lost updates occur when multiple threads perform a read-modify-write
     operation on the same shared variable at the same time.
-    6. Does increasing the number of threads always increase the
+## 6. Does increasing the number of threads always increase the
     percentage difference?
     No.
     The number of lost updates can increase, but the percentage difference
     does not necessarily increase monotonically.
     The result depends on thread scheduling, CPU resources, timing and
     runtime conditions.
-    7. Why can the result change between runs?
+##  7. Why can the result change between runs?
     Thread scheduling is not deterministic.
     Different executions can produce different thread interleavings, causing
     different numbers of lost updates.
-    8. Why does AtomicLong prevent lost updates?
+##  8. Why does AtomicLong prevent lost updates?
     AtomicLong.incrementAndGet() performs the increment atomically, so
     competing threads do not overwrite each other's increments.
-    15. Conclusion
-    This experiment demonstrates that static vs non-static describes
-    variable ownership, not thread safety.
+# 15. Conclusion
+##  This experiment demonstrates that static vs non-static describes
+  variable ownership, not thread safety.
     A static variable has one shared copy for the entire class, while a
     non-static variable has a separate copy for each object.
     The unsynchronized static counter uses:
@@ -431,6 +441,6 @@ threads can safely update the shared counter without losing increments.
      - [ ] Analysis question answers
 
 # Student Information
-Name: Md. Mashrafi Rahman
-ID: IT-24034
-Course: SEPM-ICT-3107
+            Name: Md. Mashrafi Rahman
+            ID: IT-24034
+            Course: SEPM-ICT-3107
