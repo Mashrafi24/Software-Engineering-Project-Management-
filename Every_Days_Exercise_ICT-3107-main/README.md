@@ -1,390 +1,438 @@
+# Lab_Thread_Counter — Static vs Non-Static Counter in Multithreading
 
-# Static vs Non-Static in Java
- (02-10-2026)
+**Name:** Md. Mashrafi Rahman | **ID:** IT-24034 | **Course:** SEPM-ICT-3107
 
-## 1. Introduction
+## 1. Files
 
-In Java, variables and methods can be static or non-static.
+- `Mashrafi_Thread.java` – typed version (for running)
+- `handwritten/` – photo/scan of handwritten code
+- `outputs/` – screenshots of every run (+ raw `.txt`, `results.csv`)
+- `run_all.ps1` – script that runs all test cases (5 unsynchronized runs per thread count)
+- `show_cases.ps1` – prints the output of one test case (used for screenshots)
 
-The main difference is that a static member belongs to the class,
-while a non-static member belongs to an object.
+- Lab_Thread_Counter
+│
+├── Mashrafi_Thread.java
+├── README.md
+├── run_all.ps1
+├── show_cases.ps1
+│
+├── handwritten/
+│
+└── outputs/
+    ├── results.csv
+    ├── T1_true_run1.txt
+    ├── T1_false_run1.txt
+    ├── ...
+    └── T100_false_run5.txt
 
-## 2. Static Variable
+  # 3. How to Run
+   Compile the Java Program
+   Open PowerShell in the project directory and run:
+   javac Mashrafi_Thread.java
 
-A static variable is associated with the class.
+   If there is no compilation error, the program has compiled successfully.
 
-Only one shared copy of a static variable exists for the class,
-and all objects can access the same variable.
+  ## Run Thread-Safe Mode
+   The true argument selects the AtomicLong implementation:
+    java Mashrafi_Thread 10 50000 true
 
-### Syntax
+  ## Run Unsynchronized Mode
+  The false argument selects the normal long implementation:
+  java Mashrafi_Thread 10 50000 false
 
-```java
-static int count = 0;
-Example
-class Student {
+## Command Format
+java Mashrafi_Thread <threads> <increments-per-thread> <true|false>
 
-    static String university = "MBSTU";
+Where:
+threads                = Number of threads
+increments-per-thread  = Number of increments performed by each thread
+true                   = Thread-safe AtomicLong
+false                  = Unsynchronized normal long
 
-}
-
-All Student objects share the same university value.
-3. Non-Static Variable
-A non-static variable is associated with an object.
-Each object has its own separate copy.
-Example
-class Student {
-
-    String name;
-
-}
-
-4. Static vs Non-Static
-   Static                   	Non-Static
-Belongs to class	     Belongs to object
-Shared among objects	 Separate for each object
-One copy	              One copy per object
-
-Can be accessed
-using class name         Usually accessed through object
-
-Useful for common
- data	                Useful for object-specific data
+# 4.Test Inputs
+The experiment contains seven test cases.
+Test	Threads	Increments/thread	Expected Count
+TC1	1	1,000	1,000
+TC2	2	10,000	20,000
+TC3	5	10,000	50,000
+TC4	10	50,000	500,000
+TC5	20	50,000	1,000,000
+TC6	50	50,000	2,500,000
+TC7	100	50,000	5,000,000
 
 
+Expected Count Formula
+Expected Count
+=
+Number of Threads × Increments per Thread
 
-5. Object Counting
-If we want to count how many objects have been created,
-the counter should normally be static.
-static int count = 0;
-
-Every time an object is created:
-count++;
-
-The shared counter increases.
-6. Important Note
-static does NOT mean that the value cannot change.
 For example:
-static int count = 0;
+10 × 50,000 = 500,000
 
-count++;
+# 5. Running All Test Cases
+The run_all.ps1 script automatically runs:
+Safe Mode       → 1 run for each test case
+Unsafe Mode     → 5 runs for each test case
 
-The value can become:
-0 → 1 → 2 → 3
+Run the script using:
+powershell -ExecutionPolicy Bypass -File .\run_all.ps1
 
-static means there is one shared copy.
-
-
-
-#start() & run()
-
-
-##star()
-
-task1.start();
-task2.start();
-task3.start();
-
-
-task1.start();
-তখন Java:
-1. নতুন একটা thread তৈরি করে
-2. সেই thread-কে CPU execution-এর জন্য প্রস্তুত করে
-3. তারপর automatically run() method call করে
-task1.start()
-       |
-       ↓
-New Thread created
-       |
-       ↓
-run()
-       |
-       ↓
-Task execution
-
-        Main Thread
-
-            |
-    -----------------
-    |       |       |
-    ↓       ↓       ↓
-
- task1    task2    task3
-
- Thread   Thread   Thread
-
-
-
-কোন thread আগে CPU পাবে সেটা Thread Scheduler ঠিক করে।
-
-
-Burger is cooking
-Pizza is cooking
-Pasta is cooking
-
-Pasta is cooking
-Burger is cooking
-Pizza is cooking
-
-##run()
-task1.run();
-task2.run();
-task3.run();
-
-❌ নতুন thread তৈরি হবে না।
-এটা normal method call-এর মতো চলবে।
-
-Main Thread
-
-   |
-   ↓
-
-task1.run()
-   |
-   ↓
-finish
-
-task2.run()
-   |
-   ↓
-finish
-
-task3.run()
-
-
-
-      start()                 run() 
-
- নতুন Thread তৈরি করে    | নতুন Thread তৈরি করে না 
- Multithreading হয়     | Normal method call 
- JVM run() call করে    | তুমি manually call করো 
- Concurrent execution  | Sequential execution
-
-hat does start() do in Java Thread?
-Answer:
-The start() method creates a new thread of execution and internally invokes the run() method.
-
-
-Why don't we call run() directly?
-Answer:
-Calling run() directly does not create a new thread; it executes like a normal method in the current thread.
-
-
-# Java Multithreading
-
-## Thread Concept
-
-## Creating Thread
-
-## start() vs run()
-
-## Static vs Non-static in Thread
-
-## Race Condition
-
-## Synchronization
-
-## AtomicInteger
-
-## Practice Programs
-
-
-
-
-
-extends Thread
-        ↓
-create 3 objects
-        ↓
-start()
-        ↓
-multiple threads run
-        ↓
-static = shared data
-        ↓
-non-static = separate data
-        ↓
-shared data creates race condition
-        ↓
-solve using synchronized / AtomicInteger
-
-
-
-Now see the concept of race condition, how to solve using synchornised and AtomicInteger
-1. What is a race condition?
-A race condition occurs when multiple threads access and modify the same shared data at the same time, and the final result depends on the timing/order of the threads.
-
-In your example:
-
-static int staticCount = 0;
-There is only one staticCount shared by all three threads.
-
-Each thread executes:
-
-staticCount++;
-The problem is that:
-
-staticCount++;
-looks like one operation, but internally it is approximately:
-
-1. READ  staticCount
-2. ADD   1
-3. WRITE staticCount
-It is therefore not atomic.
-
-2. How can the problem happen?
-Suppose:
-
-staticCount = 10
-Two threads execute staticCount++ at nearly the same time.
-
-Thread 1
-READ → 10
-Thread 2
-READ → 10
-Both threads have now read 10.
-
-Then:
-
-Thread 1: 10 + 1 = 11
-Thread 2: 10 + 1 = 11
-And both write:
-
-Thread 1 → WRITE 11
-Thread 2 → WRITE 11
-You expected:
-
-10 → 11 → 12
-But you got:
-
-10 → 11
-One increment was effectively lost.
-
-This is called a lost update.
-
-
- #Race Condition
-এটা সবচেয়ে important।
-তোমার:
-staticCount++;
-
-দেখতে এক লাইন।
-কিন্তু ভিতরে:
-READ
-
+A total of:
+7 Safe runs
 +
+35 Unsafe runs
+=
+42 executions
 
-ADD 1
+will be performed.
+The results will be saved in:
+outputs/results.csv
 
-+
+# 6. Output Screenshots
+Screenshots of the program outputs are stored in the outputs/
+directory.
+The unsynchronized results may be different between runs because
+thread scheduling is not deterministic.
 
-WRITE
 
-হয়।
-ধরো:
-staticCount = 10
 
-দুইটা thread:
-Thread 1:
-READ 10
+    ##TC1
+1 thread, 1,000 increments/thread
+Safe:
+<img width="419" height="251" alt="WhatsApp Image 2026-10-11 at 3 13 33 AM" src="https://github.com/user-attachments/assets/b92d08e6-a34d-4b85-8683-a0d6fe9b69cf" />
 
-Thread 2:
-READ 10
 
-এখন দুইজনের কাছে:
-10
+Unsafe:
+<img width="419" height="251" alt="WhatsApp Image 2026-10-11 at 3 13 33 AM" src="https://github.com/user-attachments/assets/b92d08e6-a34d-4b85-8683-a0d6fe9b69cf" />
 
-আছে।
-Thread 1:
-10+1=11
-WRITE 11
 
-Thread 2:
-10+1=11
-WRITE 11
+    ##TC2
 
-শেষে:
-11
 
-হল।
-কিন্তু হওয়া উচিত ছিল:
+2 threads, 10,000 increments/thread
+Safe:
+<img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/76cea33e-7233-42ed-bb74-ea10f5f750ff" />
+
+Unsafe:
+<img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/76cea33e-7233-42ed-bb74-ea10f5f750ff" />
+   
+    ##TC3
+
+5 threads, 10,000 increments/thread
+Safe:
+<img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/bf181eee-ef7d-496b-a6ad-d3b7dba619e9" />
+
+Unsafe:
+<img width="381" height="880" alt="image" src="https://github.com/user-attachments/assets/bf181eee-ef7d-496b-a6ad-d3b7dba619e9" />
+
+    ##TC4
+
+10 threads, 50,000 increments/thread
+Safe:
+<img width="416" height="730" alt="WhatsApp Image 2026-10-11 at 3 14 39 AM" src="https://github.com/user-attachments/assets/4da529d8-dd8a-4d8c-850e-d2c28dc4069b" />
+Unsafe:
+<img width="416" height="730" alt="WhatsApp Image 2026-10-11 at 3 14 39 AM" src="https://github.com/user-attachments/assets/4da529d8-dd8a-4d8c-850e-d2c28dc4069b" />
+
+    ##TC5
+
+
+20 threads, 50,000 increments/thread
+Safe:
+<img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/a6e9a0b9-e2fe-4f95-a105-a937b20f598d" />
+
+
+Unsafe:
+<img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/a6e9a0b9-e2fe-4f95-a105-a937b20f598d" />
+
+    ##TC6
+
+50 threads, 50,000 increments/thread
+Safe:
+<img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/6e6e7699-5531-44b8-bd26-c67cec9aac78" />
+
+<img width="443" height="713" alt="WhatsApp Image 2026-10-11 at 3 15 03 AM" src="https://github.com/user-attachments/assets/6e6e7699-5531-44b8-bd26-c67cec9aac78" />
+
+    ##TC7
+
+
+
+100 threads, 50,000 increments/thread
+Safe:
+<img width="410" height="451" alt="WhatsApp Image 2026-10-11 at 3 15 20 AM" src="https://github.com/user-attachments/assets/272a6e9c-c180-4d4c-b471-47bfb23964ee" />
+Unsafe:
+<img width="410" height="451" alt="WhatsApp Image 2026-10-11 at 3 15 20 AM" src="https://github.com/user-attachments/assets/272a6e9c-c180-4d4c-b471-47bfb23964ee" />
+
+# 7. Result Analysis
+7.1 Thread-Safe Experiment — AtomicLong
+The thread-safe mode uses:
+safe.incrementAndGet();
+
+The shared counter is an AtomicLong.
+Expected result:
+Expected Count = Static Count = Non-static Total
+Difference = 0
+Difference (%) = 0%
+
+Threads	Increments/thread	Expected	Static	Non-static	Abs Diff	Diff %
+1	1,000	1,000				
+2	10,000	20,000				
+5	10,000	50,000				
+10	50,000	500,000				
+20	50,000	1,000,000				
+50	50,000	2,500,000				
+100	50,000	5,000,000				
+
+
+Fill the Static, Non-static, Abs Diff and Diff % columns using the
+actual values from outputs/results.csv.
+
+7.2 Unsynchronized Experiment
+The unsynchronized mode uses:
+unsafe++;
+
+The operation is performed on a normal static long.
+
+
+
+
+Each test case is run five times.
+
+    Threads	Run	Expected	Static (Unsafe)	Non-static	Abs Diff	Diff %
+    
+    1	1	1,000				
+    1	2	1,000				
+    1	3	1,000				
+    1	4	1,000				
+    1	5	1,000				
+    2	1	20,000				
+    2	2	20,000				
+    2	3	20,000				
+    2	4	20,000				
+    2	5	20,000				
+    5	1	50,000				
+    5	2	50,000				
+    5	3	50,000				
+    5	4	50,000				
+    5	5	50,000				
+    10	1	500,000				
+    10	2	500,000				
+    10	3	500,000				
+    10	4	500,000				
+    10	5	500,000				
+    20	1	1,000,000				
+    20	2	1,000,000				
+    20	3	1,000,000				
+    20	4	1,000,000				
+    20	5	1,000,000				
+    50	1	2,500,000				
+    50	2	2,500,000				
+    50	3	2,500,000				
+    50	4	2,500,000				
+    50	5	2,500,000				
+    100	1	5,000,000				
+    100	2	5,000,000				
+    100	3	5,000,000				
+    100	4	5,000,000				
+    100	5	5,000,000				
+
+    
+    7.3 Average of Five Unsynchronized Runs
+    After running all five unsynchronized trials, calculate the average.
+    Threads	Average Static	Average Abs Diff	Average Diff %	Minimum %	Maximum %
+    1					
+    2					
+    5					
+    10					
+    20					
+    50					
+    100					
+
+
+    # 8. Calculation
+    Absolute Difference
+    The absolute difference is calculated as:
+    Absolute Difference
+    =
+    |Static Count - Non-static Total|
+    
+    Example:
+    Static Count       = 505,713
+    Non-static Total   = 1,000,000
+    
+    Absolute Difference
+    =
+    |505,713 - 1,000,000|
+    
+    =
+    494,287
+    
+    Percentage Difference
+    Difference (%)
+    =
+    (Absolute Difference / Non-static Total) × 100
+    
+    For example:
+    Absolute Difference = 494,287
+    Non-static Total    = 1,000,000
+    
+    Difference (%)
+    =
+    494,287 / 1,000,000 × 100
+    
+    =
+    49.4287%
+
+# 9. Observation
+Thread-Safe Experiment
+The AtomicLong counter provides safe atomic updates when multiple
+threads increment the same shared counter.
+The expected count should match the static counter and the total of
+the non-static counters.
+Therefore, the difference should be:
+0
+
+and the percentage difference should be:
+0%
+
+Unsynchronized Experiment
+The unsynchronized counter uses:
+unsafe++;
+
+This is a shared static variable accessed by multiple threads.
+The operation is not atomic.
+Therefore, multiple threads can interfere with each other's updates,
+causing some increments to be lost.
+10. Race Condition
+The statement:
+unsafe++;
+
+looks like one operation, but conceptually it involves three steps:
+1. Read the current value
+2. Add 1
+3. Write the new value
+
+For example:
+Initial value = 10
+
+Thread 1 → Read 10
+Thread 2 → Read 10
+
+Thread 1 → Write 11
+Thread 2 → Write 11
+
+Both threads read the same value.
+The expected result after two increments is:
 12
 
-একটা increment হারিয়ে গেল।
-এটাই:
-Lost update
+but the actual result can become:
+11
 
-6. Experiment কেন 1 million?
-এখানে:
-for(int i=0;i<1000000;i++)
-{
-    staticCount++;
-}
+One increment has been lost.
+This is called a race condition or lost update.
+11. Static vs Non-Static
+Static Variable
+static long unsafe = 0;
 
-ধরা:
-৩টা thread।
-Expected:
-3 × 1,000,000
+A static variable belongs to the class.
+There is one shared copy:
+              static counter
+                    |
+        ┌───────────┼───────────┐
+        ↓           ↓           ↓
+     Thread 1    Thread 2    Thread 3
 
-=
+All threads access the same variable.
+Non-Static Variable
+long count = 0;
 
-3,000,000
+A non-static variable belongs to an object.
+Each Counter object has its own copy:
+Thread 1 → count
+Thread 2 → count
+Thread 3 → count
 
-কিন্তু race condition হলে:
-Actual:
+Therefore, each thread can safely maintain its own instance counter.
+12. Why join() Is Used
+The program uses:
+x.join();
 
-1,847,291
+join() makes the main thread wait until the worker thread finishes.
+Without join(), the main thread could calculate the final result before
+all worker threads have completed their increments.
+13. Why AtomicLong Is Used
+The safe counter uses:
+AtomicLong safe = new AtomicLong();
 
-বা
+and:
+safe.incrementAndGet();
 
-2,478,392
+AtomicLong provides an atomic increment operation, so concurrent
+threads can safely update the shared counter without losing increments.
+## 14. Analysis Questions
+     1. What is the difference between static and non-static variables?
+       A static variable belongs to the class and has one shared copy.
+     A non-static variable belongs to an object, so every object has its own
+     copy.
+    2. Why can the static counter produce an incorrect value?
+    Because the static counter is shared by multiple threads and the normal
+    long increment operation is not atomic.
+    3. Why is the non-static counter correct?
+    Each thread has its own Counter object and therefore its own
+    non-static count variable.
+    4. Why is join() necessary?
+    join() ensures that the main thread waits for all worker threads to
+    finish before calculating the final result.
+    5. What causes lost updates?
+    Lost updates occur when multiple threads perform a read-modify-write
+    operation on the same shared variable at the same time.
+    6. Does increasing the number of threads always increase the
+    percentage difference?
+    No.
+    The number of lost updates can increase, but the percentage difference
+    does not necessarily increase monotonically.
+    The result depends on thread scheduling, CPU resources, timing and
+    runtime conditions.
+    7. Why can the result change between runs?
+    Thread scheduling is not deterministic.
+    Different executions can produce different thread interleavings, causing
+    different numbers of lost updates.
+    8. Why does AtomicLong prevent lost updates?
+    AtomicLong.incrementAndGet() performs the increment atomically, so
+    competing threads do not overwrite each other's increments.
+    15. Conclusion
+    This experiment demonstrates that static vs non-static describes
+    variable ownership, not thread safety.
+    A static variable has one shared copy for the entire class, while a
+    non-static variable has a separate copy for each object.
+    The unsynchronized static counter uses:
+    unsafe++;
+    
+    which is not atomic and can therefore produce lost updates when multiple
+    threads access it concurrently.
+    The thread-safe implementation uses:
+    safe.incrementAndGet();
 
-হতে পারে।
-কারণ increment হারিয়ে যাচ্ছে।
-7. তাহলে সমাধান কী?
-দুইটা প্রধান solution:
-Solution 1: synchronized
-Example:
-synchronized void increment(){
+     which provides atomic updates.
+     The experiment therefore demonstrates the importance of using proper
+     thread-safety mechanisms when multiple threads access shared data.
+     The exact unsynchronized result can vary between runs because thread
+     execution and scheduling are not deterministic.
+     16. Submission Checklist
+     - [ ] Mashrafi_Thread.java
+     - [ ] README.md
+     - [ ] Handwritten Java code photograph/scan
+     - [ ] Safe output for TC1–TC7
+     - [ ] Five unsafe runs for TC1–TC7
+     - [ ] outputs/results.csv
+     - [ ] Output screenshots
+     - [ ] Result analysis
+     - [ ] Average of five unsafe runs
+     - [ ] Observation
+     - [ ] Conclusion
+     - [ ] Analysis question answers
 
-    staticCount++;
-
-}
-
-এর মানে:
-এক সময়ে একটাই thread ঢুকবে।
-Diagram:
-Thread 1
-   |
- LOCK
-   |
-count++
-   |
-UNLOCK
-
-
-Thread 2 waits
-
-Solution 2: AtomicInteger
-Java দেয়:
-AtomicInteger count =
-new AtomicInteger(0);
-
-তারপর:
-count.incrementAndGet();
-
-এটা atomic operation।
-মানে:
-READ
-+
-ADD
-+
-WRITE
-
-একসাথে safe ভাবে হয়।
-
-What is synchronized?
-synchronized is a Java keyword used to control access to shared resources by allowing only one thread at a time to execute a critical section.
-
-Why do we use synchronized?
-We use synchronized to prevent race conditions when multiple threads modify shared data.
-
+# Student Information
+Name: Md. Mashrafi Rahman
+ID: IT-24034
+Course: SEPM-ICT-3107
