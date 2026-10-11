@@ -35,59 +35,56 @@
 
   ## Run Thread-Safe Mode
    The true argument selects the AtomicLong implementation:
-    java Mashrafi_Thread 10 50000 true
+
+              java Mashrafi_Thread 10 50000 true
 
   ## Run Unsynchronized Mode
   The false argument selects the normal long implementation:
-  java Mashrafi_Thread 10 50000 false
+
+              java Mashrafi_Thread 10 50000 false
 
 ## Command Format
 java Mashrafi_Thread <threads> <increments-per-thread> <true|false>
 
-Where:
-threads                = Number of threads
-increments-per-thread  = Number of increments performed by each thread
-true                   = Thread-safe AtomicLong
-false                  = Unsynchronized normal long
+            Where:
+            threads                = Number of threads
+            increments-per-thread  = Number of increments performed by each thread
+            true                   = Thread-safe AtomicLong
+            false                  = Unsynchronized normal long
 
-# 4.Test Inputs
-The experiment contains seven test cases.
-Test	Threads	Increments/thread	Expected Count
-TC1	1	1,000	1,000
-TC2	2	10,000	20,000
-TC3	5	10,000	50,000
-TC4	10	50,000	500,000
-TC5	20	50,000	1,000,000
-TC6	50	50,000	2,500,000
-TC7	100	50,000	5,000,000
+            # 4.Test Inputs
+            The experiment contains seven test cases.
+            Test	Threads	Increments/thread	Expected Count
+            TC1	1	1,000	1,000
+            TC2	2	10,000	20,000
+            TC3	5	10,000	50,000
+            TC4	10	50,000	500,000
+            TC5	20	50,000	1,000,000
+            TC6	50	50,000	2,500,000
+            TC7	100	50,000	5,000,000
 
 
-Expected Count Formula
-Expected Count
-=
-Number of Threads × Increments per Thread
+## Expected Count Formula
+Expected Count = Number of Threads × Increments per Thread
 
 For example:
 10 × 50,000 = 500,000
 
-# 5. Running All Test Cases
-The run_all.ps1 script automatically runs:
-Safe Mode       → 1 run for each test case
-Unsafe Mode     → 5 runs for each test case
+            # 5. Running All Test Cases
+            The run_all.ps1 script automatically runs:
+            Safe Mode       → 1 run for each test case
+            Unsafe Mode     → 5 runs for each test case
 
 Run the script using:
 powershell -ExecutionPolicy Bypass -File .\run_all.ps1
 
 A total of:
-7 Safe runs
-+
-35 Unsafe runs
-=
-42 executions
+7 Safe runs + 35 Unsafe runs = 42 executions
 
-will be performed.
-The results will be saved in:
-outputs/results.csv
+            will be performed.
+            The results will be saved in:
+            
+                        outputs/results.csv
 
 # 6. Output Screenshots
 Screenshots of the program outputs are stored in the outputs/
@@ -283,86 +280,86 @@ Each test case is run five times.
     =
     49.4287%
 
-# 9. Observation
-Thread-Safe Experiment
-The AtomicLong counter provides safe atomic updates when multiple
-threads increment the same shared counter.
-The expected count should match the static counter and the total of
-the non-static counters.
-Therefore, the difference should be:
-0
+            # 9. Observation
+            Thread-Safe Experiment
+            The AtomicLong counter provides safe atomic updates when multiple
+            threads increment the same shared counter.
+            The expected count should match the static counter and the total of
+            the non-static counters.
+            Therefore, the difference should be:
+            0
+            
+            and the percentage difference should be:
+            0%
+            
+            Unsynchronized Experiment
+            The unsynchronized counter uses:
+            unsafe++;
+            
+            This is a shared static variable accessed by multiple threads.
+            The operation is not atomic.
+            Therefore, multiple threads can interfere with each other's updates,
+            causing some increments to be lost.
+            10. Race Condition
+            The statement:
+            unsafe++;
 
-and the percentage difference should be:
-0%
-
-Unsynchronized Experiment
-The unsynchronized counter uses:
-unsafe++;
-
-This is a shared static variable accessed by multiple threads.
-The operation is not atomic.
-Therefore, multiple threads can interfere with each other's updates,
-causing some increments to be lost.
-10. Race Condition
-The statement:
-unsafe++;
-
-looks like one operation, but conceptually it involves three steps:
-1. Read the current value
-2. Add 1
-3. Write the new value
-
-For example:
-Initial value = 10
-
-Thread 1 → Read 10
-Thread 2 → Read 10
-
-Thread 1 → Write 11
-Thread 2 → Write 11
-
-Both threads read the same value.
-The expected result after two increments is:
-12
-
-but the actual result can become:
-11
-
-One increment has been lost.
-This is called a race condition or lost update.
-11. Static vs Non-Static
-Static Variable
-static long unsafe = 0;
-
-A static variable belongs to the class.
-There is one shared copy:
-              static counter
-                    |
-        ┌───────────┼───────────┐
-        ↓           ↓           ↓
-     Thread 1    Thread 2    Thread 3
-
-All threads access the same variable.
-Non-Static Variable
-long count = 0;
-
-A non-static variable belongs to an object.
-Each Counter object has its own copy:
-Thread 1 → count
-Thread 2 → count
-Thread 3 → count
-
-Therefore, each thread can safely maintain its own instance counter.
-12. Why join() Is Used
-The program uses:
-x.join();
-
-join() makes the main thread wait until the worker thread finishes.
-Without join(), the main thread could calculate the final result before
-all worker threads have completed their increments.
-13. Why AtomicLong Is Used
-The safe counter uses:
-AtomicLong safe = new AtomicLong();
+            looks like one operation, but conceptually it involves three steps:
+            1. Read the current value
+            2. Add 1
+            3. Write the new value
+            
+            For example:
+            Initial value = 10
+            
+            Thread 1 → Read 10
+            Thread 2 → Read 10
+            
+            Thread 1 → Write 11
+            Thread 2 → Write 11
+            
+            Both threads read the same value.
+            The expected result after two increments is:
+            12
+            
+            but the actual result can become:
+            11
+            
+            One increment has been lost.
+            This is called a race condition or lost update.
+            11. Static vs Non-Static
+            Static Variable
+            static long unsafe = 0;
+            
+            A static variable belongs to the class.
+            There is one shared copy:
+                          static counter
+                                |
+                    ┌───────────┼───────────┐
+                    ↓           ↓           ↓
+                 Thread 1    Thread 2    Thread 3
+            
+            All threads access the same variable.
+            Non-Static Variable
+            long count = 0;
+            
+            A non-static variable belongs to an object.
+            Each Counter object has its own copy:
+            Thread 1 → count
+            Thread 2 → count
+            Thread 3 → count
+            
+            Therefore, each thread can safely maintain its own instance counter.
+            12. Why join() Is Used
+            The program uses:
+            x.join();
+            
+            join() makes the main thread wait until the worker thread finishes.
+            Without join(), the main thread could calculate the final result before
+            all worker threads have completed their increments.
+            13. Why AtomicLong Is Used
+            The safe counter uses:
+            AtomicLong safe = new AtomicLong();
 
 and:
 safe.incrementAndGet();
