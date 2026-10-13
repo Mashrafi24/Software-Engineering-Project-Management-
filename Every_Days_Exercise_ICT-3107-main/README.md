@@ -8,7 +8,7 @@
 - `handwritten/` – photo/scan of handwritten code
 - `outputs/` – screenshots of every run (+ raw `.txt`, `results.csv`)
 - `run_all.ps1` – script that runs all test cases (5 unsynchronized runs per thread count)
-- `show_cases.ps1` – prints the output of one test case (used for screenshots)
+- `show_cases.ps1` – prints the output of one test case (used for screenshots
 
             - Lab_Thread_Counter
             │
