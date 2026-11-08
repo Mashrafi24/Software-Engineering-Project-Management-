@@ -42,11 +42,24 @@ Do not run `DesktopApp.main()` directly; use the Maven JavaFX plugin.
 3. Set Application Context to `/mashrafi-tools`.
 4. Open `http://localhost:8080/mashrafi-tools/tools`.
 
+
+
+
 ## Database tables
 - `calc_history`: expression, result and timestamp.
 - `gantt_tasks`: day, task date, title, description, progress and status.
 
 The application initializes tables on startup. Existing `gantt_tasks` tables are upgraded with progress/status columns where possible.
+
+
+# screenshot:
+## Scientific Calculator :
+<img width="1074" height="805" alt="image" src="https://github.com/user-attachments/assets/1508a4f5-cdcb-4804-a914-faf32054b3b7" />
+
+## Gantt Chart Calculator :
+<img width="1074" height="805" alt="image" src="https://github.com/user-attachments/assets/95320c87-dd0b-4ef5-8d69-a68adea1ec74" />
+
+
 
 ## Troubleshooting
 - `mvn: command not found`: use IntelliJ bundled Maven command above or Maven tool window.
