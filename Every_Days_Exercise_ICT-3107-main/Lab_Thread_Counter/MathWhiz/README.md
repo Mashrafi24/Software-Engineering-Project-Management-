@@ -59,6 +59,10 @@ Project: https://github.com/Mashrafi24/Software-Engineering-Project-Management-/
 
 **Mashrafi Math Whiz** is a web-based mathematical quiz game developed with **Java Servlets, JSP, JDBC, and MySQL**.
 
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/82dfd2f7-5469-4248-a8c2-f16825c68d22" />
+
+
 A player enters a name and answers **four mathematical questions** from three areas: **prime numbers, modulus operations, and trigonometry**. The server evaluates the submitted answers using Java methods, calculates a **score out of 10**, saves the result in MySQL, and provides a **Top 10 leaderboard**.
 
 flowchart TB
