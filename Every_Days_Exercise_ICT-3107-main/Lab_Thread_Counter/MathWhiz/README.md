@@ -119,7 +119,7 @@ MathWhiz/
 
 **📸 Screenshot 01 – IntelliJ IDEA Project Structure**
 
-![Project Structure](screenshots/01-project-structure.png)
+<img width="488" height="860" alt="image" src="https://github.com/user-attachments/assets/a9d99693-073a-4676-99f6-efd226bf9ebb" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -142,7 +142,8 @@ The welcome form sends the player's name to the server using an **HTTP POST** re
 
 **📸 Screenshot 02 – Welcome Page**
 
-![Welcome Page](screenshots/02-welcome-page.png)
+<img width="1451" height="860" alt="image-1" src="https://github.com/user-attachments/assets/eac62219-d87e-4030-818e-5bbd1ec4a605" /><img width="690" height="245" alt="image-2" src="https://github.com/user-attachments/assets/0addcbf8-b6eb-4ea0-a1c2-4dec98c6d895" />
+
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -175,7 +176,7 @@ The game uses this method to evaluate **Question 1**.
 
 **📸 Screenshot 03 – Prime Number Function**
 
-![Prime Function](screenshots/03-prime-function.png)
+<img width="690" height="245" alt="image-2" src="https://github.com/user-attachments/assets/71a50146-5fe2-4032-bf74-194e06197bcc" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -207,7 +208,7 @@ The game uses this method to evaluate **Question 2**.
 
 **📸 Screenshot 04 – Modulus Function**
 
-![Modulus Function](screenshots/04-modulus-function.png)
+<img width="929" height="240" alt="image-3" src="https://github.com/user-attachments/assets/347d22fb-8c01-4229-9741-2e7d4668af20" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -297,11 +298,11 @@ if (trig2Correct) {
 
 **📸 Screenshot 06 – Game Page**
 
-![Game Page](screenshots/06-game-page.png)
+<img width="919" height="204" alt="image-4" src="https://github.com/user-attachments/assets/6149c46e-5d43-47d6-9c25-5c1c598808c6" />
 
 **📸 Screenshot 07 – Result Page**
 
-![Result Page](screenshots/07-result-page.png)
+<img width="1046" height="961" alt="image-5" src="https://github.com/user-attachments/assets/a3b3b882-4537-4b2b-abca-170dafd72051" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -352,7 +353,7 @@ CREATE TABLE IF NOT EXISTS game_scores (
 
 **📸 Screenshot 08 – MySQL Database and Table**
 
-![MySQL Database](screenshots/08-mysql-database.png)
+<img width="993" height="782" alt="image-6" src="https://github.com/user-attachments/assets/41557979-9e45-4076-b4bc-926fea78ffe7" />
 
 **📸 Screenshot 08B – Saved Game Records**
 
@@ -362,7 +363,7 @@ USE math_whiz_db;
 SELECT * FROM game_scores;
 ```
 
-![Database Records](screenshots/08b-database-records.png)
+<img width="796" height="762" alt="image-8" src="https://github.com/user-attachments/assets/4ca06df4-e7e1-4382-9004-ddf03de0b70d" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -389,7 +390,11 @@ LIMIT 10;
 
 **📸 Screenshot 09 – Top 10 Leaderboard**
 
-![Leaderboard](screenshots/09-leaderboard.png)
+<img width="977" height="398" alt="image-7" src="https://github.com/user-attachments/assets/a4f15557-54a3-4541-875b-e15f43997f32" />
+
+
+<img width="1058" height="502" alt="image-9" src="https://github.com/user-attachments/assets/d905e69e-5c87-4e5e-b1d9-00f268683cb8" />
+
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -423,7 +428,7 @@ LIMIT 10;
 
 **📸 Screenshot 10A – Mathematical Testing**
 
-![Math Testing](screenshots/10a-math-testing.png)
+<img width="796" height="762" alt="image-8" src="https://github.com/user-attachments/assets/8f87b21a-6585-4812-8349-a7ec54c3d42e" />
 
 **📸 Screenshot 10B – Input Validation**
 
