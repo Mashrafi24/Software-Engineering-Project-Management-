@@ -473,12 +473,11 @@ Replace `<your-context-path>` with the actual deployed context path.
 
 | Item | Link |
 |---|---|
-| GitHub Repository |[ADD_YOUR_REPOSITORY_URL](https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main) |
-| Project Directory | [ADD_YOUR_PROJECT_SUBDIRECTORY_URL](ADD_YOUR_PROJECT_SUBDIRECTORY_URL) |
+| GitHub Repository : 
+https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main
 
-**📸 Screenshot 11 – GitHub Repository**
-
-[![GitHub Submission](screenshots/11-github-submission.png)](https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main)
+**📸  – GitHub Repository**
+https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
