@@ -298,17 +298,19 @@ if (trig2Correct) {
 
 **📸 Screenshot 06 – Game Page**
 
+<img width="1046" height="961" alt="image-5" src="https://github.com/user-attachments/assets/a826de5a-d6c5-40ae-a42b-59c6e96690cd" />
 
 
 **📸 Screenshot 07 – Result Page**
 
-<img width="1046" height="961" alt="image-5" src="https://github.com/user-attachments/assets/a3b3b882-4537-4b2b-abca-170dafd72051" />
 
-[⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
+
+<img width="993" height="782" alt="image-6" src="https://github.com/user-attachments/assets/0733ef9a-4c33-4a11-9fe4-66f88d14ce11" />
 
 ---
 
 <a id="task-07"></a>
+
 ## 🗄️ Task 07 – Database Design Using JDBC
 
 **Objective:** Connect the application to MySQL and store each completed game's score.
@@ -353,7 +355,7 @@ CREATE TABLE IF NOT EXISTS game_scores (
 
 **📸 Screenshot 08 – MySQL Database and Table**
 
-<img width="993" height="782" alt="image-6" src="https://github.com/user-attachments/assets/41557979-9e45-4076-b4bc-926fea78ffe7" />
+<img width="796" height="762" alt="image-8" src="https://github.com/user-attachments/assets/38450e89-5c4f-4e4e-be83-003821f4a4c1" />
 
 **📸 Screenshot 08B – Saved Game Records**
 
@@ -390,10 +392,8 @@ LIMIT 10;
 
 **📸 Screenshot 09 – Top 10 Leaderboard**
 
-<img width="977" height="398" alt="image-7" src="https://github.com/user-attachments/assets/a4f15557-54a3-4541-875b-e15f43997f32" />
+<img width="1058" height="502" alt="image-9" src="https://github.com/user-attachments/assets/f13f5d19-d2bb-495f-bb40-21a1095ffe36" />
 
-
-<img width="1058" height="502" alt="image-9" src="https://github.com/user-attachments/assets/d905e69e-5c87-4e5e-b1d9-00f268683cb8" />
 
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
