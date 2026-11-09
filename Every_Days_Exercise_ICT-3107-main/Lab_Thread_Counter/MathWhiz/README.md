@@ -243,7 +243,7 @@ These methods are used to evaluate **Questions 3 and 4**.
 
 **📸 Screenshot 05 – Trigonometric Functions**
 
-![Trigonometric Functions](screenshots/05-trigonometric-functions.png)
+!<img width="919" height="204" alt="image-4" src="https://github.com/user-attachments/assets/6149c46e-5d43-47d6-9c25-5c1c598808c6" />
 
 [⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
 
@@ -298,7 +298,7 @@ if (trig2Correct) {
 
 **📸 Screenshot 06 – Game Page**
 
-<img width="919" height="204" alt="image-4" src="https://github.com/user-attachments/assets/6149c46e-5d43-47d6-9c25-5c1c598808c6" />
+
 
 **📸 Screenshot 07 – Result Page**
 
