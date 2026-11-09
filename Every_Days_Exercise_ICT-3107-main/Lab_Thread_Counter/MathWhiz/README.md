@@ -473,7 +473,7 @@ Replace `<your-context-path>` with the actual deployed context path.
 
 | Item | Link |
 |---|---|
-| GitHub Repository | [ADD_YOUR_REPOSITORY_URL]([ADD_YOUR_REPOSITORY_URL](https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main)) |
+| GitHub Repository |[ADD_YOUR_REPOSITORY_URL](https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz/src/main) |
 | Project Directory | [ADD_YOUR_PROJECT_SUBDIRECTORY_URL](ADD_YOUR_PROJECT_SUBDIRECTORY_URL) |
 
 **📸 Screenshot 11 – GitHub Repository**
