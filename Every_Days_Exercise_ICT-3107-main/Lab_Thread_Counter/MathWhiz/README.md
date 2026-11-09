@@ -50,6 +50,8 @@
 
 **Also:** [📖 Overview](#overview) · [🧰 Technologies](#technologies) · [☑️ Final Checklist](#checklist) · [🎓 Learning Outcomes](#outcomes) · [✍️ Author](#author)
 
+
+Project: https://github.com/Mashrafi24/Software-Engineering-Project-Management-/tree/main/Every_Days_Exercise_ICT-3107-main/Lab_Thread_Counter/MathWhiz
 ---
 
 <a id="overview"></a>
