@@ -61,6 +61,41 @@ Project: https://github.com/Mashrafi24/Software-Engineering-Project-Management-/
 
 A player enters a name and answers **four mathematical questions** from three areas: **prime numbers, modulus operations, and trigonometry**. The server evaluates the submitted answers using Java methods, calculates a **score out of 10**, saves the result in MySQL, and provides a **Top 10 leaderboard**.
 
+flowchart TB
+    A(["👤 PLAYER<br/>Enter Name"]) --> B["🌐 WELCOME PAGE<br/>JSP / HTML / CSS"]
+    B --> C["🎮 START GAME<br/>Java Servlet"]
+
+    C --> D["🧮 FOUR MATHEMATICAL CHALLENGES"]
+
+    D --> Q1["Q1: Prime Number<br/>2 Marks"]
+    D --> Q2["Q2: Modulus Operation<br/>2 Marks"]
+    D --> Q3["Q3: Trigonometry<br/>3 Marks"]
+    D --> Q4["Q4: Trigonometry<br/>3 Marks"]
+
+    Q1 --> E["⚙️ MathService.java"]
+    Q2 --> E
+    Q3 --> E
+    Q4 --> E
+
+    E --> F["JAVA MATH METHODS<br/>isPrime()<br/>calculateMod()<br/>calculateSin()<br/>calculateCos()<br/>calculateTan()"]
+
+    F --> G["📊 SERVER-SIDE ANSWER EVALUATION"]
+    G --> H["🏆 SCORE CALCULATION<br/>Maximum: 10 Marks"]
+
+    H --> I["💾 ScoreDAO.java<br/>JDBC + PreparedStatement"]
+    I <--> J[("🗄️ MySQL Database<br/>math_whiz_db<br/>game_scores")]
+
+    J --> K["📋 LeaderboardServlet"]
+    K --> L["TOP 10 LEADERBOARD<br/>Player · Score · Difficulty · Date"]
+
+    H --> M["🎯 RESULT PAGE<br/>Final Score"]
+
+    style A fill:#dbeafe,stroke:#2563eb,color:#172554
+    style E fill:#dbeafe,stroke:#2563eb,color:#172554
+    style J fill:#dcfce7,stroke:#16a34a,color:#14532d
+    style H fill:#fef3c7,stroke:#d97706,color:#78350f
+    style L fill:#ede9fe,stroke:#7c3aed,color:#3b0764
+
 The purpose of this lab is to demonstrate mathematical method development, server-side processing, JDBC database operations, and leaderboard generation — not simply to display a quiz interface.
 
 <a id="technologies"></a>
