@@ -430,19 +430,8 @@ LIMIT 10;
 
 <img width="796" height="762" alt="image-8" src="https://github.com/user-attachments/assets/8f87b21a-6585-4812-8349-a7ec54c3d42e" />
 
-**📸 Screenshot 10B – Input Validation**
 
-![Validation](screenshots/10b-validation.png)
 
-**📸 Screenshot 10C – Database Verification**
-
-![Database Testing](screenshots/10c-database-testing.png)
-
-[⬆️ Back to navigation](#-quick-navigation--all-10-tasks)
-
----
-
-<a id="task-10"></a>
 ## 📦 Task 10 – Final Documentation and GitHub Submission
 
 **Objective:** Prepare the complete project for submission and document its implementation.
