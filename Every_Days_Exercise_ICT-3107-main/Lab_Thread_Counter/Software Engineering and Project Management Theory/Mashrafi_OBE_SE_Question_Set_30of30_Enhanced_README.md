@@ -446,6 +446,399 @@ otherwise could not because their interfaces are incompatible.
         CO5             Q8         8         20%
      **TOTAL**      **Q1--Q8**   **40**    **100%**
 
+
+
+Q1. Define software design. Explain the basic steps of the software
+design process. 4 Marks Remember + Understand CO1 BNQF: Cognitive
+
+Answer:
+
+Software design is a problem-solving process in which software
+requirements are transformed into a design representation.
+
+The requirements are the input to the software design process. It
+consists of two basic steps:
+
+1.  Architectural Design: Also called high-level or top-level design. It
+    describes how the software is organized into different components.
+
+2.  Detailed Design: It describes the desired behaviour of individual
+    components.
+
+Diagram: Software Design Process Software Requirements \| v
++-------------------+ \| Architectural \| \| Design \|
++-------------------+ \| v +-------------------+ \| Detailed Design \|
++-------------------+ \| v Software Design Models
+
+Remember: - Architectural design = Overall organization. - Detailed
+design = Behaviour of components. Bloom's explanation: Defining software
+design assesses Remember; explaining its two steps assesses Understand.
+
+Source: SoftEng-Design.pdf, pages 3--6.
+
+Q2. What is the outcome of the software design process? Explain the
+importance of recording design rationale. 4 Marks Understand CO1 BNQF:
+Cognitive
+
+Answer:
+
+The outcome of the software design process is a set of models and
+artifacts that record the major decisions made during design, together
+with the rationale for each nontrivial decision.
+
+Design Rationale is the explanation of why a particular design decision
+was made.
+
+Importance of recording design rationale: 1. It helps developers
+understand why a particular design decision was made. 2. It provides
+information about previous design decisions. 3. It helps future
+developers understand the design. 4. It enhances the long-term
+maintainability of the software product. Diagram: Design Process \| v
+Design Decisions \| +-----+-----+ \| \| v v Design Design Models
+Rationale \| \| +-----+-----+ \| v Better Understanding \| v Long-term
+Maintainability
+
+Remember: Design rationale = Why a design decision was made.
+
+Bloom's explanation: Understand -- students explain the outcome and
+importance of design rationale.
+
+Source: SoftEng-Design.pdf, pages 7--8.
+
+Q3. Define modularity, coupling and cohesion in software design. 4 Marks
+Remember (Knowledge) CO2 BNQF: Cognitive
+
+Answer:
+
+1.  Modularity: Modularity is the process of dividing large software
+    into smaller, named components with well-defined interfaces.
+    Different functionalities and responsibilities are placed in
+    different components.
+
+2.  Coupling: Coupling measures the degree of interdependence among
+    components in a computer program. A good software design aims for
+    low coupling.
+
+3.  Cohesion: Cohesion measures the strength of association among
+    elements within a component. A good software design aims for high
+    cohesion.
+
+Diagram: Modularity Large Software \| Decomposition \| +------+------+
+\| \| \| v v v Module Module Module A B C \| \| \| +------+------+
+Interfaces
+
+Coupling vs Cohesion Low Coupling
+
+Less dependency
+
+High Cohesion
+
+Strong internal relationship
+
+Important exam point:
+
+A good software design generally aims for: - Low Coupling - High
+Cohesion Memorization trick: - Modularity = Divide into modules. -
+Coupling = Relationship between components. - Cohesion = Relationship
+within a component. Source: SoftEng-Design.pdf, pages 9--13.
+
+Q4. Explain abstraction, encapsulation and information hiding in
+software design. 4 Marks Understand CO2 BNQF: Cognitive
+
+Answer:
+
+1.  Abstraction: Abstraction is a view of an object that focuses on
+    information relevant to a particular purpose and ignores the
+    remaining information.
+
+2.  Encapsulation: Encapsulation means grouping and packaging the
+    internal details of an abstraction.
+
+3.  Information Hiding: Information hiding means making internal details
+    inaccessible to external entities.
+
+Relationship:
+
+Encapsulation packages internal details, while information hiding
+prevents external entities from directly accessing those details.
+Abstraction focuses on the relevant external view.
+
+Diagram: SOFTWARE OBJECT +--------------------+ \| \| \| Public
+Interface \| \| \| +--------------------+ \| \| \| Internal Details \|
+\| \| \| Data + Methods \| \| \| +--------------------+ \| v Information
+Hiding
+
+Easy example:
+
+Consider an ATM machine: - Abstraction: The user sees options such as
+Withdraw and Check Balance. - Encapsulation: Internal data and
+operations are packaged inside the ATM software. - Information Hiding:
+The user cannot directly access the internal banking database.
+Memorization: - Abstraction = Show relevant information. - Encapsulation
+= Package internal details. - Information hiding = Hide internal
+details. Source: SoftEng-Design.pdf, page 14.
+
+Q5. Explain CBO, LCOM and WMC metrics used for assessing object-oriented
+software design quality. 8 Marks Understand CO3 BNQF: Cognitive
+
+Answer:
+
+Software design quality can be assessed through software design reviews
+and software metrics. Reviews examine design artifacts, while metrics
+quantify the assessment.
+
+The Chidamber and Kemerer (CK) metrics suite is a well-known set of
+metrics for object-oriented software. 1. Coupling Between Object Classes
+(CBO) CBO measures the number of classes used by a particular class.
+
+Formula: \[ CBO(A)=`\text{Number of classes used by A}`{=tex} \]
+
+Example:
+
+Suppose a Controller class uses two classes: Bell and Light.
++------------+ \| Controller \| +------------+ /\
+v v +------+ +-------+ \| Bell \| \| Light \| +------+ +-------+
+
+Therefore: \[ CBO(Controller)=2 \]
+
+Inheritance is typically not counted in the slide's example. 2. Lack of
+Cohesion of Methods (LCOM) LCOM measures the lack of cohesion among the
+methods of a class. - P set: Pairs of methods that do not use common
+attributes. - Q set: Pairs of methods that use common attributes.
+Formula: \[ LCOM(x)=
+```{=tex}
+\begin{cases}
+|P|-|Q|,& |P|>|Q|\\
+0,& |P|\leq |Q|
+\end{cases}
+```
+\]
+
+Example from the slides:
+
+For the Rectangle class: \[ Q=3,`\quad `{=tex}P=0 \]
+
+Since (P`\leq `{=tex}Q), \[ `\boxed{LCOM=0}`{=tex} \]
+
+The slides also introduce LCOM2: \[
+LCOM2(x)=1-`\frac{\sum ma_i}{m\times a}`{=tex} \]
+
+Where: - (m) = Number of methods. - (a) = Number of attributes. - (ma_i)
+= Number of methods that use attribute (a_i). A smaller LCOM2 value is
+better. 3. Weighted Methods per Class (WMC) WMC measures class
+complexity by adding the complexity of its methods.
+
+Formula: \[ WMC(A)=`\sum`{=tex}\_{i=1}\^{N}C_i \]
+
+Where: - (C_i) = Complexity of method (i). - (N) = Total number of
+methods. The slides mention Lines of Code (LOC) and McCabe complexity as
+possible ways to measure it.
+
+In the McCabe approach, the number of conditions is counted and 1 is
+added. The slides count if, for and while as one condition each.
+
+The Controller example gives: \[ `\boxed{WMC=10}`{=tex} \]
+
+Comparison of three metrics Metric Measures CBO Class coupling LCOM Lack
+of cohesion WMC Method complexity
+
+Complete diagram: SOFTWARE DESIGN QUALITY \| v CK METRICS SUITE \|
++---------+---------+ \| \| \| v v v CBO LCOM WMC \| \| \| v v v Class
+Method Method Coupling Cohesion Complexity
+
+Exam conclusion:
+
+CBO measures class coupling, LCOM measures lack of cohesion among
+methods, and WMC measures the weighted complexity of methods in a class.
+
+Memorization trick: - CBO = Coupling - LCOM = Lack of Cohesion - WMC =
+Weighted Methods Complexity Source: SoftEng-Design.pdf, pages 15--29.
+
+Q6. What is software architecture? Explain layered architecture and
+event-based architecture. 4 Marks Remember + Understand CO4 BNQF:
+Cognitive
+
+Answer:
+
+In its strict sense, software architecture is the set of structures
+needed to reason about a system. These structures comprise software
+elements, relations among them, and properties of both.
+
+There are two architectural styles: 1. Layered Architecture In layered
+architecture, components are organized into different layers. Each layer
+depends only on the next layer, as described in the slides.
+
+Diagram: +----------------------+ \| Presentation Layer \|
++----------------------+ \| v +----------------------+ \| Business Logic
+\| \| Layer \| +----------------------+ \| v +----------------------+ \|
+Data Layer \| +----------------------+ \| v +----------------------+ \|
+Database \| +----------------------+
+
+Each layer has its own responsibility and interacts with the next layer.
+2. Event-Based Architecture Event-based architecture contains event
+producers and consumers. - Event Producer: Generates events. - Event
+Consumer: Receives or consumes events. - Event Distribution Mechanism:
+Transfers events from producers to consumers. Consumers can register for
+events.
+
+Diagram: +----------------+ +----------------+ \| Event Producer \| \|
+Event Producer \| \| A \| \| B \| +----------------+ +----------------+
+  /   / v v +-------------------------+ \| Event Distribution \| \|
+Mechanism \| +-------------------------+ \| +----+----+ \| \| v v
++----------+ +----------+ \| Consumer \| \| Consumer \| \| A \| \| B \|
++----------+ +----------+
+
+Difference: - Layered architecture organizes components into layers. -
+Event-based architecture connects event producers and consumers through
+an event-distribution mechanism. Memorization:
+
+Layered = Layers.
+
+Event-based = Producer → Event Mechanism → Consumer.
+
+Source: SoftEng-Design.pdf, pages 30--36.
+
+Q7. Explain the Model--View--Controller (MVC) architectural style and
+the responsibilities of its three components. 4 Marks Understand CO4
+BNQF: Cognitive
+
+Answer:
+
+Model--View--Controller (MVC) is an architectural style consisting of
+three components: Model, View and Controller. 1. Model The Model
+represents information about the domain. It holds the domain
+information. 2. View The View represents the display of the Model in the
+User Interface (UI). 3. Controller The Controller takes user input,
+manipulates the Model and causes the View to update appropriately.
+
+MVC Diagram: MVC Architecture USER Interacts with the application
+
+Controller Handles user input
+
+View Displays information
+
+Controller → Model
+
+Model → View
+
+Model Stores domain information
+
+Updated Display Shows the Model
+
+Conceptual representation of the three MVC components and their
+responsibilities. Responsibilities at a glance: Component Responsibility
+Model Represents domain information View Displays information in UI
+Controller Handles input and coordinates updates
+
+Example:
+
+In a student management system: - Model: Student information. - View:
+Student list displayed on the screen. - Controller: Handles the request
+to add or update a student. Memorization:
+
+MVC = Model (Information) + View (Display) + Controller (Input).
+
+Source: SoftEng-Design.pdf, page 37.
+
+Q8. Explain the intent, structure and benefits of the Strategy and
+Adapter design patterns. 8 Marks Understand CO5 BNQF: Cognitive
+
+Answer:
+
+Design patterns provide reusable solutions to common software design
+problems. The question covers two design patterns: Strategy and Adapter.
+A. Strategy Design Pattern Intent:
+
+The Strategy pattern defines a family of algorithms, encapsulates each
+one and makes them interchangeable. It allows an algorithm to vary
+independently from clients that use it.
+
+Structure:
+
+There are three main components: 1. Strategy: Declares a common
+interface for supported algorithms. 2. ConcreteStrategy: Implements an
+algorithm using the Strategy interface. 3. Context: Maintains a
+reference to a Strategy object and uses its interface to call the
+selected algorithm. The slides give WalkingStrategy and CarStrategy as
+examples, with Navigator as the Context.
+
+Diagram: Strategy Pattern +----------------+ \| Navigator \| \| Context
+\| +----------------+ \| v +----------------+ \| Strategy \| \|
+Interface \| +----------------+ \| +------+------+ \| \| v v
++----------------+ +----------------+ \| WalkingStrategy\| \|
+CarStrategy \| +----------------+ +----------------+ \| Walking Logic \|
+\| Driving Logic \| +----------------+ +----------------+
+
+Benefits: - Isolates Context from algorithm implementation details. -
+New strategies can be added without changing Context. - Avoids complex
+conditionals for alternative algorithms in Context. - Algorithms can be
+swapped at runtime. Liabilities: - A common interface for different
+algorithms may be difficult to specify. - Strategies increase the number
+of objects in an application. B. Adapter Design Pattern Intent:
+
+The Adapter pattern converts the interface of a class into another
+interface expected by clients. It allows classes to work together when
+they otherwise could not because their interfaces are incompatible.
+
+Structure: 1. Target: Defines the domain-specific interface used by the
+Client. In the slides, it is Shape. 2. Client: Collaborates with objects
+conforming to the Target interface. Example: DrawingEditor. 3. Adaptee:
+Defines an existing interface that needs adapting. Example: TextView. 4.
+Adapter: Adapts the Adaptee interface to the Target interface. Example:
+TextShape. Diagram: Adapter Pattern +----------------+ \| Client \| \|
+DrawingEditor \| +----------------+ \| v +----------------+ \| Target \|
+\| Shape \| +----------------+ \^ \| +----------------+ \| Adapter \| \|
+TextShape \| +----------------+ \| v +----------------+ \| Adaptee \| \|
+TextView \| +----------------+
+
+Benefit:
+
+Adaptees can be added or used without changing existing code.
+
+Liability:
+
+Overall code complexity increases because new classes and a level of
+indirection are introduced. Strategy vs Adapter Strategy Pattern Adapter
+Pattern Defines a family of algorithms. Converts one interface into
+another. Makes algorithms interchangeable. Makes incompatible interfaces
+work together. Uses Strategy and ConcreteStrategy. Uses Target, Adapter
+and Adaptee. Example: WalkingStrategy and CarStrategy. Example:
+TextShape and TextView.
+
+Final conclusion:
+
+The Strategy pattern makes algorithms interchangeable, whereas the
+Adapter pattern allows incompatible interfaces to work together.
+
+Source: SoftEng-Design.pdf, pages 40--43 and 47--62.
+
+Final Bloom's Taxonomy and OBE Mapping তোমার question paper অনুযায়ী final
+classification: Q.No. Bloom's Level BNQF Domain CO Marks Q1 Remember +
+Understand Cognitive CO1 4 Q2 Understand Cognitive CO1 4 Q3 Remember
+Cognitive CO2 4 Q4 Understand Cognitive CO2 4 Q5 Understand Cognitive
+CO3 8 Q6 Remember + Understand Cognitive CO4 4 Q7 Understand Cognitive
+CO4 4 Q8 Understand Cognitive CO5 8 Total 40
+
+Bloom's Taxonomy -- সহজে মনে রাখো Cognitive Domain 1. Remember
+(Knowledge)
+
+Recall, define, identify and list information.
+
+Example: Define software design. 2. Understand (Understanding)
+
+Explain, describe, summarize and interpret concepts.
+
+Example: Explain MVC architecture. 3. Apply (Application)
+
+Use knowledge in a practical situation. 4. Analyze (Analysis)
+
+Break information into parts and examine relationships. 5. Evaluate
+(Evaluation)
+
+Judge or justify a decision. 6. Create (Synthesis)
+
+Develop something new.
+
 ## 6. Bloom's Taxonomy Distribution
 
 This paper uses only the two cognitive levels requested for this assessment: **Remember (Knowledge)** and **Understand (Understanding)**.
