@@ -6,7 +6,7 @@
 | | |
 |---|---|
 | **Prepared by** | Md. Mashrafi Rahman (ID: IT-24034) |
-| **Course** | Software Engineering |
+| **Course** | Software Engineering and Project Management (ICT-3107) |
 | **Assessment** | OBE-Based Question Paper with Model Answers |
 | **Full Marks** | 40 |
 | **Time** | 1 Hour |
