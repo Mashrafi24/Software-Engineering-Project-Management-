@@ -812,7 +812,8 @@ Adapter pattern allows incompatible interfaces to work together.
 
 ## Software Design Diagrams
 
-![Software Design Infographic](images/software-design-infographic.png)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/82516f29-16c0-424b-a123-81516aba28bb" />
+
 
 Source: SoftEng-Design.pdf, pages 40--43 and 47--62.
 
