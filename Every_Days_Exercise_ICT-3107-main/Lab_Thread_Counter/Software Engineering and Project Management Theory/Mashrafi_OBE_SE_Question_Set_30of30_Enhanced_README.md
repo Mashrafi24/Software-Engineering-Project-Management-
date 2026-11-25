@@ -810,6 +810,10 @@ Final conclusion:
 The Strategy pattern makes algorithms interchangeable, whereas the
 Adapter pattern allows incompatible interfaces to work together.
 
+## Software Design Diagrams
+
+![Software Design Infographic](images/software-design-infographic.png)
+
 Source: SoftEng-Design.pdf, pages 40--43 and 47--62.
 
 Final Bloom's Taxonomy and OBE Mapping তোমার question paper অনুযায়ী final
