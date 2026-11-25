@@ -134,8 +134,8 @@ included for revision and verification.*
 
 ### Q1. Software Design and Its Process
 
-`<sub>`{=html}**4 Marks** · **Knowledge** · **Cognitive Domain** ·
-**CO1**`</sub>`{=html}
+    `<sub>`{=html}**4 Marks** · **Knowledge** · **Cognitive Domain** ·
+    **CO1**`</sub>`{=html}
 
 **Answer:**
 
@@ -151,15 +151,15 @@ has two basic steps:
 Therefore, architectural design defines the overall organization, while
 detailed design explains the behaviour of individual components.
 
-`<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
-3--6.`</sub>`{=html}
+    `<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
+    3--6.`</sub>`{=html}
 
 ------------------------------------------------------------------------
 
 ### Q2. Outcome and Design Rationale
 
-`<sub>`{=html}**4 Marks** · **Understanding** · **Cognitive Domain** ·
-**CO1**`</sub>`{=html}
+    `<sub>`{=html}**4 Marks** · **Understanding** · **Cognitive Domain** ·
+    **CO1**`</sub>`{=html}
 
 **Answer:**
 
@@ -172,15 +172,15 @@ decision was made. Recording it helps people understand the reasons
 behind design decisions later. The slides state that recording rationale
 enhances the **long-term maintainability** of the software product.
 
-`<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
-7--8.`</sub>`{=html}
+     `<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
+    7--8.`</sub>`{=html}
 
 ------------------------------------------------------------------------
 
 ### Q3. Modularity, Coupling and Cohesion
 
-`<sub>`{=html}**4 Marks** · **Knowledge** · **Cognitive Domain** ·
-**CO2**`</sub>`{=html}
+    `<sub>`{=html}**4 Marks** · **Knowledge** · **Cognitive Domain** ·
+    **CO2**`</sub>`{=html}
 
 **Answer:**
 
@@ -197,15 +197,15 @@ enhances the **long-term maintainability** of the software product.
 > **Remember:** A good software design generally aims for **LOW
 > COUPLING + HIGH COHESION**.
 
-`<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
-9--13.`</sub>`{=html}
+    `<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, pages
+    9--13.`</sub>`{=html}
 
 ------------------------------------------------------------------------
 
 ### Q4. Abstraction, Encapsulation and Information Hiding
 
-`<sub>`{=html}**4 Marks** · **Understanding** · **Cognitive Domain** ·
-**CO2**`</sub>`{=html}
+    `<sub>`{=html}**4 Marks** · **Understanding** · **Cognitive Domain** ·
+    **CO2**`</sub>`{=html}
 
 **Answer:**
 
@@ -221,15 +221,15 @@ Encapsulation and information hiding package the internal details and
 prevent external entities from directly accessing them. This separates
 the externally visible view from internal implementation details.
 
-`<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, page
-14.`</sub>`{=html}
+    `<sub>`{=html}📖 Reference: `SoftEng-Design.pdf`, page
+    14.`</sub>`{=html}
 
 ------------------------------------------------------------------------
 
 ### Q5. CBO, LCOM and WMC
 
-`<sub>`{=html}**8 Marks** · **Understanding** · **Cognitive Domain** ·
-**CO3**`</sub>`{=html}
+    `<sub>`{=html}**8 Marks** · **Understanding** · **Cognitive Domain** ·
+    **CO3**`</sub>`{=html}
 
 **Answer:**
 
