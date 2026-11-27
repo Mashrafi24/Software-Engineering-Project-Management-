@@ -5,7 +5,7 @@
 | Item | Details |
 |---|---|
 | Assignment | Build CampusBoot with Custom Annotations |
-| Student | **Mashrafi** |
+| Student | **Md.Mashrafi Rahman** |
 | Student ID | **[Add your student ID]** |
 | Language | Java 11+ |
 | IDE | IntelliJ IDEA |
