@@ -23,8 +23,8 @@
 
 ---
 ## Here Question :
-![alt text](image.png)
-![alt text](image-1.png)
+<img width="577" height="608" alt="image-1" src="https://github.com/user-attachments/assets/6c11567c-94c4-4717-aaae-87fc14856ac5" />
+!<img width="542" height="773" alt="image" src="https://github.com/user-attachments/assets/9f683783-8b51-4be2-bc8a-ef113c1a4865" />
 
 ## Section A — Short Answers
 **Answer all. (8 × 1 = 8 marks)**
