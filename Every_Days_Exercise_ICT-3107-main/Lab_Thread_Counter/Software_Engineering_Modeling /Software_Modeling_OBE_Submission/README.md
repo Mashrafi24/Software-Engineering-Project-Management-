@@ -1,90 +1,352 @@
-# SOFTWARE MODELING (UML) — OBE QUESTION PAPER
+# Software Design — Solved OBE Question Set
 
-**Course:** Software Engineering  
-**Source:** `5-SoftEng-Modeling.pdf` (48-page lecture slides)  
-**Full Marks:** 40 · **Time:** 1 Hour · **BNQF Domain:** Cognitive
 
-**Bloom codes:** K = Remember/Knowledge · U = Understand/Understanding · A = Apply/Application.
+## Student Information
 
-> **Instructions:** Answer all Section A questions, any four from Section B, and any two from Section C. Draw neat UML diagrams wherever requested.
-
-## Proposed Course Outcomes
-
-| CO | Statement |
+| Field | Details |
 |---|---|
-| **CO1** | Explain and model use cases and package organization, including specialization, include and extension. |
-| **CO2** | Represent classes, attributes, operations, associations, multiplicity, aggregation, composition, generalization and interfaces. |
-| **CO3** | Describe object collaboration and interactions using sequence diagrams. |
-| **CO4** | Explain states, transitions, triggers, guards and actions using state diagrams. |
-| **CO5** | Model processes and concurrent activities using activity diagrams, forks, joins, rendezvous and swimlanes. |
+| **Name** | Md. Mashrafi Rahman |
+| **Student ID** | IT-24034 |
+| **University** | Mawlana Bhashani Science and Technology University (MBSTU) |
+| **Department** | Information and Communication Technology (ICT) |
+| **Course Title** | Software Engineering Project Management |
+| **Course Code** | ICT_3107 |
+| **Topic** | Software Design |
+
+
+
+**Full Marks:** 40 · **Time:** 1 Hour  
+**BNQF Domain:** Cognitive  
+**Bloom levels:** K = Knowledge/Remember · U = Understanding · A = Application
+
+> **Study note:** The paper instructs students to answer all Section A questions, any four from Section B, and any two from Section C. For practice, solutions are provided for every question, including the optional questions.
+
+---
+## Here Question :
+![alt text](image.png)
+![alt text](image-1.png)
 
 ## Section A — Short Answers
-**Answer all (8 × 1 = 8 marks).**
+**Answer all. (8 × 1 = 8 marks)**
 
-| Q | Question | Marks | Bloom | BNQF | CO |
-|---:|---|---:|:---:|---|:---:|
-| 1 | Define a UML use case diagram. | 1 | K | Cognitive | CO1 |
-| 2 | What is a package in a UML package diagram? | 1 | K | Cognitive | CO1 |
-| 3 | What does multiplicity specify in a class diagram? | 1 | K | Cognitive | CO2 |
-| 4 | What is a reflexive association? | 1 | K | Cognitive | CO2 |
-| 5 | State one key difference between aggregation and composition. | 1 | U | Cognitive | CO2 |
-| 6 | What does a lifeline represent in a sequence diagram? | 1 | K | Cognitive | CO3 |
-| 7 | What is a trigger in a state diagram? | 1 | K | Cognitive | CO4 |
-| 8 | What is the purpose of a fork in an activity diagram? | 1 | K | Cognitive | CO5 |
+### Q1. Define software design. (K · CO1)
+
+Software design is the process of transforming software requirements into a plan or blueprint that describes the system's structure, components, interfaces and data so that it can be implemented.
+
+### Q2. Name the two steps of the software design process. (K · CO1)
+
+1. **Architectural design:** Identifies the main components or subsystems and their relationships.
+2. **Detailed design:** Describes the internal structure and behaviour of each component.
+
+### Q3. What does low coupling mean? (K · CO2)
+
+Low coupling means that modules have few dependencies on one another. A change in one module therefore has less effect on other modules.
+
+### Q4. Define cohesion. (K · CO2)
+
+Cohesion is the degree to which the elements within a module are related and work together to perform one focused task. High cohesion is desirable.
+
+### Q5. What does the LCOM2 metric measure? (K · CO3)
+
+LCOM2 (Lack of Cohesion in Methods) measures how poorly the methods of a class are connected through shared instance variables. A higher value generally indicates lower cohesion.
+
+### Q6. List any two architectural styles. (K · CO4)
+
+- Layered architecture
+- Model–View–Controller (MVC) architecture
+
+### Q7. Under which GoF category does the Adapter pattern fall? (K · CO5)
+
+The Adapter pattern is a **Structural** design pattern.
+
+### Q8. State in one sentence what the Domain Model pattern (Fowler) represents. (K · CO5)
+
+The Domain Model pattern represents the business domain as a set of objects that contain both domain data and the business rules or behaviour associated with that data.
+
+---
 
 ## Section B — Short Questions
-**Answer any 4 of 5 (4 × 4 = 16 marks).**
+**Answer any 4 of 5. (4 × 4 = 16 marks)**
 
-| Q | Question | Marks | Bloom | BNQF | CO |
-|---:|---|---:|:---:|---|:---:|
-| 9 | Explain the purpose of a use case diagram and the roles of actors and use cases. | 4 | U | Cognitive | CO1 |
-| 10 | Explain package dependency and why a change in a supplier package may affect a dependent package. | 4 | U | Cognitive | CO1 |
-| 11 | Differentiate association, aggregation and composition with suitable examples. | 4 | U | Cognitive | CO2 |
-| 12 | Explain how a sequence diagram represents object collaboration. Include lifelines, messages and activation bars. | 4 | U | Cognitive | CO3 |
-| 13 | Explain states and transitions in a state diagram. Describe trigger, guard and action. | 4 | U | Cognitive | CO4 |
+### Q9. Distinguish between architectural (high-level) design and detailed design. (U · CO1)
 
-## Section C — Long / Diagram-Based Questions
-**Answer any 2 of 3 (2 × 8 = 16 marks).**
-
-| Q | Question | Marks | Bloom | BNQF | CO |
-|---:|---|---:|:---:|---|:---:|
-| 14 | A file application allows a user to open a file by typing its name or browsing. Identify the general use case and specialized use cases. Show where an included or extending use case is appropriate. Draw a UML use case diagram. | 8 | A | Cognitive | CO1 |
-| 15 | Model a system containing Company, Branch, Employee and Address classes. Draw a class diagram with suitable associations, multiplicities, aggregation/composition where justified, and generalization or an interface where appropriate. Briefly justify the relationships. | 8 | A | Cognitive | CO2 |
-| 16 | A registration process involves a user, a registration interface and a registration service. Draw a sequence diagram for the normal flow and one alternative flow. Explain how the sequence diagram complements a class diagram. | 8 | A | Cognitive | CO3 |
-
-## Blueprint Summary
-
-| Section | Questions offered | Attempt rule | Marks counted |
-|---|---:|---|---:|
-| A | 8 | All | 8 |
-| B | 5 | Any 4 | 16 |
-| C | 3 | Any 2 | 16 |
-| **Total** | **16** | | **40** |
-
-## Source coverage
-
-| PDF pages | Topics |
+| Architectural design | Detailed design |
 |---|---|
-| 2–6 | Use case diagrams, branching and loops in use cases |
-| 7–8 | Packages and package dependencies |
-| 9–20 | Classes, associations, multiplicity, labels, reflexive/directional associations, aggregation, composition, generalization and interfaces |
-| 21–27 | Sequence diagrams, basic, alternative/optional and iterative interactions |
-| 29–38 | Advanced use cases, specialization, include, extension, preconditions, postconditions and flows |
-| 39–44 | State diagrams, states, transitions, triggers, guards, actions, entry/exit/do activities and time-outs |
-| 45–48 | Activity diagrams, concurrency, fork, join, rendezvous and swimlanes |
+| Describes the overall system structure. | Describes the internal design of each component. |
+| Identifies major components/subsystems. | Specifies classes, methods, algorithms and data structures. |
+| Defines how components communicate. | Defines how each component performs its responsibility. |
+| Focuses on the big picture. | Focuses on implementation-level details. |
 
-## CO Mapping
+**Example:** For an online shopping system, architectural design identifies modules such as Customer, Product, Order and Payment. Detailed design specifies the methods and data fields inside the `Order` class and how an order is calculated.
 
-| CO | Questions |
+### Q10. Explain, with a suitable example, how high cohesion and low coupling improve maintainability. (U · CO2)
+
+**High cohesion** means a module has one clear responsibility. **Low coupling** means it depends as little as possible on other modules.
+
+Example: In an online shop, a `PaymentService` should handle payment processing only. It should not also manage product inventory or generate invoices. It can communicate with those modules through small, well-defined interfaces.
+
+Benefits:
+1. A change in payment processing is less likely to affect inventory or invoicing.
+2. Each module is easier to understand and test.
+3. Bugs can be isolated more easily.
+4. New features can be added with fewer changes to existing code.
+
+Therefore, high cohesion and low coupling make software easier to maintain and extend.
+
+### Q11. What does WMC measure? Explain the two ways it can be calculated. (U · CO3)
+
+**WMC (Weighted Methods per Class)** measures the complexity of a class by considering the complexity of its methods.
+
+Two common calculation approaches are:
+
+1. **Equal weight:** Count the methods in the class, treating each method as having weight 1.
+   \[
+   WMC = \text{Number of methods}
+   \]
+2. **Complexity weight:** Add the complexity value of each method, such as its cyclomatic complexity.
+   \[
+   WMC = \sum_{i=1}^{n} c_i
+   \]
+
+A higher WMC may indicate that a class is complex, harder to understand, test and maintain.
+
+### Q12. Describe the Pipes and Filters architectural style. Give one benefit and one liability. (U · CO4)
+
+In the **Pipes and Filters** style, processing is divided into independent components called *filters*. Each filter receives input, processes it and sends its output through a *pipe* to the next filter.
+
+```text
+Input → [Filter 1] → Pipe → [Filter 2] → Pipe → [Filter 3] → Output
+```
+
+**Example:** A data-processing system may read a file, clean the data, sort it and then generate a report. Each stage is a separate filter.
+
+- **Benefit:** Filters can be reused, replaced or rearranged independently.
+- **Liability:** Data conversion and communication between filters may add overhead; the style can also be awkward when processing requires shared state or complex interaction.
+
+### Q13. Differentiate between the Strategy and Template Method patterns in terms of intent and structure. (U · CO5)
+
+| Strategy | Template Method |
 |---|---|
-| CO1 | 1, 2, 9, 10 |
-| CO2 | 3, 4, 5, 11, 15 |
-| CO3 | 6, 12, 16 |
-| CO4 | 7, 13 |
-| CO5 | 8 |
+| Defines a family of interchangeable algorithms and makes them selectable. | Defines the skeleton of an algorithm in a superclass and lets subclasses redefine selected steps. |
+| Usually uses composition: a context holds a strategy object. | Uses inheritance: subclasses implement or override steps. |
+| The algorithm can be changed at runtime by replacing the strategy. | The overall algorithm structure is fixed by the superclass. |
+| Example: choosing CardPayment or MobilePayment. | Example: a report-generation superclass defining `read()`, `process()` and `print()` steps. |
 
-**Important:** The CO statements above are proposed from the lecture topics; the PDF does not provide official CO1–CO5 wording. Replace them with your instructor's official CO statements before submission. Section B and C are optional-choice sections, so the exact CO coverage of an individual student's attempted paper depends on the selected questions.
+**Main difference:** Strategy varies the whole algorithm through composition, while Template Method varies selected steps of a fixed algorithm through inheritance.
 
-## Reference
+---
 
-`5-SoftEng-Modeling.pdf` — *Software Modeling – UML*, 48-page lecture slide set.
+## Section C — Long / Problem-Based Questions
+**Answer any 2 of 3. (2 × 8 = 16 marks)**
+
+### Q14. Calculate and interpret CBO and LCOM2. Suggest one refactoring. (CO3 · Bloom: A)
+
+**Given:**
+
+- `OrderController` uses `OrderModel`, `OrderView` and `Logger`.
+- `Validator` also uses `OrderController`.
+- `OrderModel` has methods and attributes:
+
+| Method | Attributes used |
+|---|---|
+| m1 | a, b |
+| m2 | b |
+| m3 | c |
+
+#### (a) Calculate CBO for OrderController, counting coupling in either direction. (2)
+
+Coupling Between Objects (CBO) counts the number of distinct other classes coupled to the target class. Since the question says to count coupling in **either direction**, count both classes it uses and classes that use it.
+
+- Outgoing dependencies: `OrderModel`, `OrderView`, `Logger` = 3
+- Incoming dependency: `Validator` = 1
+
+\[
+\boxed{CBO(OrderController)=3+1=4}
+\]
+
+#### (b) Calculate LCOM2 for OrderModel, showing the values of P and Q. (4)
+
+For this question:
+
+- **P** = number of pairs of methods that do not share an instance attribute.
+- **Q** = number of pairs of methods that share at least one instance attribute.
+- \(LCOM2 = \max(P-Q,0)\).
+
+There are three method pairs:
+
+| Method pair | Shared attribute? | Classification |
+|---|---|---|
+| m1, m2 | Yes — b | Q |
+| m1, m3 | No | P |
+| m2, m3 | No | P |
+
+Therefore:
+
+- \(P=2\)
+- \(Q=1\)
+
+\[
+LCOM2=\max(2-1,0)=\boxed{1}
+\]
+
+#### (c) Interpret the result and suggest one refactoring. (2)
+
+An LCOM2 value of 1 indicates some lack of cohesion: `m3` does not share an attribute with either `m1` or `m2`. The class may contain more than one responsibility.
+
+**Suggested refactoring:** If `m3` represents a separate responsibility, move it and the related attribute `c` into a separate class. This can improve cohesion and make both classes easier to maintain.
+
+### Q15. Explain Layered and MVC architectural styles, with the responsibility of each component or layer. Compare them. (CO4 · Bloom: U)
+
+#### (a) Layered architecture
+
+Layered architecture organizes a system into horizontal layers. Each layer has a specific responsibility and normally uses the services of the layer below it.
+
+```text
++------------------------------+
+| Presentation / UI Layer      |
+| User interface and display   |
++------------------------------+
+              ↓
++------------------------------+
+| Business Logic Layer         |
+| Rules and application logic  |
++------------------------------+
+              ↓
++------------------------------+
+| Data Access Layer            |
+| Database operations          |
++------------------------------+
+              ↓
++------------------------------+
+| Database                     |
+| Persistent data              |
++------------------------------+
+```
+
+**Responsibilities:**
+1. **Presentation layer:** Accepts user input and displays output.
+2. **Business logic layer:** Applies business rules and processes requests.
+3. **Data access layer:** Reads and writes data in the database.
+4. **Database:** Stores persistent information.
+
+#### (b) Model–View–Controller (MVC)
+
+MVC separates an application into three cooperating components.
+
+```text
+             User
+              |
+              v
+        +-----------+
+        | Controller|
+        +-----------+
+          |       |
+   updates|       |selects
+          v       v
+     +---------+  +------+
+     |  Model  |  | View |
+     +---------+  +------+
+          |          |
+          +----------+
+          Model data
+          displayed
+          in the View
+```
+
+**Responsibilities:**
+1. **Model:** Holds application data and domain logic.
+2. **View:** Presents information to the user.
+3. **Controller:** Handles user input, coordinates actions and updates the model or selects a view.
+
+#### (c) Comparison
+
+| Property | Layered architecture | MVC |
+|---|---|---|
+| Main organization | Divides the system into technical layers. | Separates model, presentation and input control. |
+| Main purpose | Separation of responsibilities across system tiers. | Separation of user interface concerns. |
+| Typical use | Enterprise systems and applications with data/business layers. | Web and desktop user-interface applications. |
+| Relationship | Layers usually call services in adjacent/lower layers. | Controller coordinates Model and View. |
+
+**Conclusion:** Layered architecture structures the overall application into technical tiers, while MVC structures the interaction and presentation part of an application. They can also be used together.
+
+### Q16. For the Facade pattern, describe its intent, motivation, structure, benefits and liabilities. (CO5 · Bloom: U)
+
+#### (a) Intent (1)
+
+The **Facade** is a Structural GoF design pattern that provides a simple, unified interface to a complex subsystem.
+
+#### (b) Motivation, with a short example (2)
+
+A client may need to interact with several classes to complete one task. This makes the client code complex and tightly coupled to the subsystem.
+
+**Example:** To start a computer, a client may need to start the CPU, check memory and load the operating system. A `ComputerFacade` can provide one simple method, `startComputer()`, that coordinates these operations.
+
+#### (c) Structure (participants and labelled diagram) (2)
+
+**Participants:**
+- **Client:** Uses the simple facade interface.
+- **Facade:** Provides the unified interface and coordinates subsystem operations.
+- **Subsystem classes:** Perform the actual work.
+
+```text
+             +----------------+
+             |     Client     |
+             +----------------+
+                     |
+                     | calls
+                     v
+             +----------------+
+             |     Facade     |
+             | startComputer()|
+             +----------------+
+                /     |     \
+               /      |      \
+              v       v       v
+        +--------+ +--------+ +--------+
+        |  CPU   | | Memory | |  OS    |
+        +--------+ +--------+ +--------+
+          Subsystem classes
+```
+
+#### (d) Benefits and liabilities, including the “God class” risk (3)
+
+**Benefits:**
+1. Simplifies the interface to a complex subsystem.
+2. Reduces coupling between clients and subsystem classes.
+3. Makes common operations easier to perform.
+4. Can help organize subsystem access behind one entry point.
+
+**Liabilities:**
+1. The facade may become a **God class** if too many unrelated responsibilities are added to it.
+2. It may hide useful subsystem functionality from clients that need direct access.
+3. It does not remove the subsystem's complexity; it only provides a simpler interface to it.
+
+**Conclusion:** Facade improves usability and reduces client-side complexity, but the facade itself should remain focused and should not become responsible for the entire system.
+
+---
+
+## Quick Revision — Key Formulas
+
+| Metric | Meaning | Formula / interpretation |
+|---|---|---|
+| CBO | Coupling Between Objects | Number of distinct coupled classes |
+| WMC | Weighted Methods per Class | \(\sum c_i\), or method count when each weight is 1 |
+| LCOM2 | Lack of Cohesion in Methods | \(\max(P-Q,0)\), where P = non-sharing pairs and Q = sharing pairs |
+
+## Bloom's Taxonomy and BNQF Mapping
+
+| Section | Main Bloom level | BNQF domain | Assessment focus |
+|---|---|---|---|
+| A | Knowledge / Remember (K) | Cognitive | Recall definitions, names and basic facts |
+| B | Understanding (U) | Cognitive | Explain, compare and describe concepts |
+| C | Application (A) and Understanding (U) | Cognitive | Calculate metrics, interpret results, apply and explain design concepts |
+
+## Important exam reminders
+
+- For CBO in Q14, count the incoming `Validator` dependency because the question explicitly says to count coupling in either direction.
+- For LCOM2 in Q14, show the three method pairs before calculating P and Q.
+- In Q15, label the layers and MVC components clearly in the diagrams.
+- In Q16, label Client, Facade and subsystem classes; mention the God class risk explicitly.
+
+
+source: IT-24006 
